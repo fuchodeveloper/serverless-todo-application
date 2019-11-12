@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Runtime: nodejs8.10
+    Timeout: 180
+
+Resources:
+  CreateTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/createTodo.handler
+      Events:
+        CreateTodo:
+          Type: Api
+          Properties:
+            Path: /create
+            Method: post
+
+  GetTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/getTodo.handler
+      Events:
+        GetTodo:
+          Type: Api
+          Properties:
+            Path: /get
+            Method: get
+
+  UpdateTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/updateTodo.handler
+      Events:
+        UpdateTodo:
+          Type: Api
+          Properties:
+            Path: /update
+            Method: put
+
+  DeleteTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/deleteTodo.handler
+      Events:
+        DeleteTodo:
+          Type: Api
+          Properties:
+            Path: /delete
+            Method: delete

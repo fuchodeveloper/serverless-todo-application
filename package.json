@@ -1,0 +1,16 @@
+{
+  "name": "serverless-todo-backend-app2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "connection.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.569.0",
+    "short-unique-id": "^1.1.1"
+  }
+}
